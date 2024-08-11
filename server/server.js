@@ -6,7 +6,11 @@
 // 3. Create an Apollo Provider so that requests can communicate with an Apollo Server.
 
 // 4. Deploy your application to Render with a MongoDB database using MongoDB Atlas.
-// Having issues.
+
+// type Query holds all the get APIs and type Mutation holds all the creation, update or delete APIs.
+
+// With apollo-server-express we need to use the expressMiddleware function
+
 const express = require("express");
 const path = require("path");
 const db = require("./config/connection");
