@@ -11,6 +11,9 @@
     "render-build": "npm install && npm run build"
   },
   "keywords": [],
+  "engines": {
+    "node": ">=20.12.2 <20.15.1"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
