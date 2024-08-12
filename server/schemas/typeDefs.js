@@ -23,6 +23,10 @@ const typeDefs = `
   }
   
   type Query {
+    getSingleUser(id: ID, username: String): User
+  }
+
+  type Mutations {
   
   }
 
