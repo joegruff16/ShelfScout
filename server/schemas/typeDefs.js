@@ -23,7 +23,7 @@ const typeDefs = gql`
     token: ID!
     user: User!
   }
-  
+
   type Query {
     getSingleUser(id: ID, username: String): User
   }
@@ -31,12 +31,9 @@ const typeDefs = gql`
   type Mutations {
     createUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-
-    saveBook
-
-    deleteBook
+    saveBook(bookId: ID!): Book
+    deleteBook(id: ID!): Book
   }
-
 `;
-
+// Need to add saveBook and deleteBook
 module.exports = typeDefs;
