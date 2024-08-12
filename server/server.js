@@ -12,18 +12,16 @@
 // With apollo-server-express we need to use the expressMiddleware function
 
 const express = require("express");
-// Import ApolloServer and ExpressMiddleware to convert to GraphQL
-const { typeDefs, resolvers } = require("./schemas");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleWare } = require("@apollo/server/express4");
-
 const path = require("path");
-// Will need to import typeDefs and Resolvers here when created
-const db = require("./config/connection");
-const routes = require("./routes");
+const { authMiddleware } = require("./utils/auth");
 
-const app = express();
+const { typeDefs, resolvers } = require("./schemas");
+const db = require("./config/connection");
+
 const PORT = process.env.PORT || 3001;
+const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -35,7 +33,12 @@ const startApolloServer = async () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
 
-  app.use("/graphql", expressMiddleWare(server));
+  app.use(
+    "/graphql",
+    expressMiddleWare(server, {
+      context: ({ req }) => authMiddleware({ req }),
+    })
+  );
 
   // if we're in production, serve client/build as static assets
   if (process.env.NODE_ENV === "production") {
@@ -45,8 +48,6 @@ const startApolloServer = async () => {
       res.sendFile(path.join(__dirname, "../client/build/index.html"));
     });
   }
-
-  app.use(routes); // This will be going away when we have established our Resolvers and TypeDefs
 
   // Updated to add another console.log to show where the graphql server is running
   db.once("open", () => {
