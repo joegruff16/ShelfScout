@@ -48,4 +48,4 @@ The app's backend has been refactored from traditional RESTful API routes to use
 
 ## GitHub Repo
 
-<https://github.com/joegruff16>
+<https://github.com/joegruff16/ShelfScout>
