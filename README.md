@@ -4,8 +4,6 @@
 
 The app's backend has been refactored from traditional RESTful API routes to use GraphQL with Apollo Server, while the front end remains unchanged. The login and signup functions work the same as before utilizing Google's Book API to find any book that's available in their API.
 
-<p align="right"><a href="#readme-top">back to top</a></p>
-
 ## Technology
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -24,21 +22,13 @@ The app's backend has been refactored from traditional RESTful API routes to use
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-<p align="right"><a href="#readme-top">back to top</a></p>
+## Finished Product
 
-## Usage
+![GraphQLSandbox](./client/src/assets/graphql-sandbox.png)
 
-<p align="right"><a href="#readme-top">back to top</a></p>
+![ApolloServer](./client/src/assets/apollo-server.png)
 
-## Key Features
-
-<!-- - ![Finished Product](link finished product gif) -->
-
-<p align="right"><a href="#readme-top">back to top</a></p>
-
----
-
-<p align="right"><a href="#readme-top">back to top</a></p>
+![RenderSearch](./client/src/assets/render-search2.png)
 
 ## Acknowledgements
 
