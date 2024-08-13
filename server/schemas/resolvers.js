@@ -11,7 +11,7 @@ const resolvers = {
       return findUser;
     },
   },
-  Mutation: {
+  Mutations: {
     // GraphQL POST logic to create a new user by identifying if the user exists via email. If the password is correct a token is generated along with the user
     createUser: async (_, { username, email, password }) => {
       const user = await User.create({ username, email, password });
